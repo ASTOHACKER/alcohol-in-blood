@@ -18,13 +18,20 @@ class BAC(object):
     def result(self):
         if self.gender == 'woman':
             print(f'\nAs a woman who have had {self.amount} cl. of {self.vol}% vol, {self.time} hour ago.')
-            print(f'You`ve had {self.standard_drink()} drinks,which gives you a {self.promille_woman()}% BAC\n')
+            print(f'You`ve had {self.standard_drink()} drinks,which gives you a {self.promille_woman()*1000}% BAC\n')
         elif self.gender == 'man':
             print(f'\nAs a man who have had {self.amount} cl. of {self.vol}% vol, {self.time} hour ago.')
-            print(f'You`ve had {self.standard_drink()} drinks,which gives you a {self.promille_man()}% BAC\n')
+            print(f'You`ve had {self.standard_drink()} drinks,which gives you a {self.promille_man()*1000}% BAC\n')
         else:
             print("Fault.")
-
+    
+    ##def TOTAL(self):
+        #if self.promille_woman == '90%':
+            #print("")
+        #elif self.promille_woman == '30%':
+            #print("")
+        #else:
+            #print("Fault.")
 if __name__ == "__main__":
     weight = int(input("Weight of the patient in kg: "))
     time = int(input("Enter the time of drink (in hour only): "))
@@ -33,4 +40,7 @@ if __name__ == "__main__":
     gender = str(input("You are man or woman: "))
 
     BAC(weight,time,vol,amount,gender).result()
+    BAC(weight,time,vol,amount,gender).TOTAL()
+
+
  
